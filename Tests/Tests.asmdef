@@ -1,0 +1,17 @@
+{
+    "name": "Tests",
+    "references": [
+        "Ark.Core",
+        "Ark.Standalone",
+        "Ark.Unity",
+        "Ark.UnityEditor"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

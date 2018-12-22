@@ -1,0 +1,8 @@
+{
+    "name": "Ark.Core",
+    "references": [],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true
+}

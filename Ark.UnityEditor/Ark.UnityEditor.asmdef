@@ -1,0 +1,13 @@
+{
+    "name": "Ark.UnityEditor",
+    "references": [
+        "Ark.Core",
+        "Ark.Unity"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Ark.Standalone",
+    "references": [
+        "Ark.Core"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true
+}

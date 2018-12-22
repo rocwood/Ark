@@ -1,0 +1,10 @@
+{
+    "name": "Ark.Unity",
+    "references": [
+        "Ark.Core"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true
+}
