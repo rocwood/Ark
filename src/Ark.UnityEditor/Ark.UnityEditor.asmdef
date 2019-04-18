@@ -1,7 +1,7 @@
 {
     "name": "Ark.UnityEditor",
     "references": [
-        "Ark.Core",
+        "Ark.Base",
         "Ark.Unity"
     ],
     "optionalUnityReferences": [],

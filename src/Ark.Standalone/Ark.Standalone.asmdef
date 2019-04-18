@@ -1,7 +1,7 @@
 {
     "name": "Ark.Standalone",
     "references": [
-        "Ark.Core"
+        "Ark.Base"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
