@@ -11,6 +11,7 @@ namespace Ark
 			return (uint)reader.ReadVLInt32();
 		}
 
+		// https://referencesource.microsoft.com/#mscorlib/system/io/binaryreader.cs,f30b8b6e8ca06e0f
 		public static int ReadVLInt32(this BinaryReader reader)
 		{
 			// Read out an Int32 7 bits at a time.
@@ -40,6 +41,7 @@ namespace Ark
 			writer.WriteVL((uint)val);
 		}
 
+		// https://referencesource.microsoft.com/#mscorlib/system/io/binarywriter.cs,2daa1d14ff1877bd
 		public static void WriteVL(this BinaryWriter writer, uint val)
 		{
 			// Write out an int 7 bits at a time.

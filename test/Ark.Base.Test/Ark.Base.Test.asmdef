@@ -1,10 +1,7 @@
 {
-    "name": "Test",
+    "name": "Ark.Base.Test",
     "references": [
-        "Ark.Base",
-        "Ark.Standalone",
-        "Ark.Unity",
-        "Ark.UnityEditor"
+        "Ark.Base"
     ],
     "optionalUnityReferences": [
         "TestAssemblies"
