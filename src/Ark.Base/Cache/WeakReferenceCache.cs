@@ -31,7 +31,7 @@ namespace Ark
 		/// <summary>
 		/// Update key/value, and add reference, reset lifetime
 		/// </summary>
-		public virtual void Set(TKey key, TValue value, object refer, bool removeOldRefersIfChange = true)
+		public virtual void Set(TKey key, TValue value, object refer)
 		{
 			CacheItem item = null;
 			_cache.TryGetValue(key, out item);
@@ -47,8 +47,8 @@ namespace Ark
 			{
 				if (item.value != value)
 				{
-					if (removeOldRefersIfChange)
-						item.refers.Clear();
+					item.RemoveAllRefers();
+					item.Dispose(_disposer);
 
 					item.value = value;
 				}
@@ -71,6 +71,27 @@ namespace Ark
 				if (item != null)
 					item.RemoveRefer(refer);
 			}
+		}
+
+		/// <summary>
+		/// Remove key/value and all refernces manually
+		/// </summary>
+		/// <param name="key"></param>
+		public virtual void Remove(TKey key)
+		{
+			CacheItem item;
+			if (!_cache.TryGetValue(key, out item))
+				return;
+
+			if (item != null)
+				item.Dispose(_disposer);
+
+			_cache.Remove(key);
+		}
+
+		public virtual void Clear()
+		{
+			_cache.Clear();
 		}
 
 		protected float _checkElapsed = 0;
@@ -174,7 +195,7 @@ namespace Ark
 					return;
 
 				if (refers.FindIndex(x => x.Target == refer) < 0)
-					refers.Add(new WeakReference(refer));
+					refers.Add(new WeakReference(refer, false));
 			}
 
 			public void RemoveRefer(object refer)
@@ -183,6 +204,11 @@ namespace Ark
 					return;
 
 				refers.RemoveAll(x => x.Target == refer);
+			}
+
+			public void RemoveAllRefers()
+			{
+				refers.Clear();
 			}
 		}
 
